@@ -4,6 +4,8 @@ binary="portainer-$1-$2"
 
 echo "Type in your proxysetting like http://username:Userpassword@proxy-server:Port"
 read proxyconnection
+export http_proxy=$proxyconnection
+export https_proxy=$proxyconnection
 
 mkdir -p dist
 
