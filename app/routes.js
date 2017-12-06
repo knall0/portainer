@@ -575,32 +575,6 @@ function configureRoutes($stateProvider) {
       }
     }
   })
-  .state('volumes', {
-    url: '/volumes/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/volumes/volumes.html',
-        controller: 'VolumesController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('volume', {
-    url: '^/volumes/:id',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/volume/volume.html',
-        controller: 'VolumeController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
   .state('users', {
     url: '/users/',
     views: {

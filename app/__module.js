@@ -64,10 +64,7 @@ angular.module('portainer', [
   'task',
   'team',
   'teams',
-  // 'templates',
   'user',
   'users',
   'userSettings',
-  'volume',
-  'volumes',
   'rzModule']);
