@@ -26,32 +26,6 @@ function configureRoutes($stateProvider) {
       requiresLogin: false
     }
   })
-  .state('configs', {
-     url: '^/configs/',
-     views: {
-       'content@': {
-         templateUrl: 'app/components/configs/configs.html',
-         controller: 'ConfigsController'
-       },
-       'sidebar@': {
-         templateUrl: 'app/components/sidebar/sidebar.html',
-         controller: 'SidebarController'
-       }
-     }
-   })
-   .state('config', {
-     url: '^/config/:id/',
-     views: {
-       'content@': {
-         templateUrl: 'app/components/config/config.html',
-         controller: 'ConfigController'
-       },
-       'sidebar@': {
-         templateUrl: 'app/components/sidebar/sidebar.html',
-         controller: 'SidebarController'
-       }
-     }
-   })
   .state('containers', {
     parent: 'root',
     url: '/containers/',
@@ -182,19 +156,6 @@ function configureRoutes($stateProvider) {
       }
     }
   })
-  .state('actions.create.config', {
-     url: '/config',
-     views: {
-       'content@': {
-         templateUrl: 'app/components/createConfig/createconfig.html',
-         controller: 'CreateConfigController'
-       },
-       'sidebar@': {
-         templateUrl: 'app/components/sidebar/sidebar.html',
-         controller: 'SidebarController'
-       }
-     }
-   })
   .state('actions.create.container', {
     url: '/container/:from',
     views: {
@@ -211,64 +172,12 @@ function configureRoutes($stateProvider) {
       from: ''
     }
   })
-  .state('actions.create.network', {
-    url: '/network',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/createNetwork/createnetwork.html',
-        controller: 'CreateNetworkController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
   .state('actions.create.registry', {
     url: '/registry',
     views: {
       'content@': {
         templateUrl: 'app/components/createRegistry/createregistry.html',
         controller: 'CreateRegistryController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('actions.create.secret', {
-    url: '/secret',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/createSecret/createsecret.html',
-        controller: 'CreateSecretController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('actions.create.service', {
-    url: '/service',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/createService/createservice.html',
-        controller: 'CreateServiceController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('actions.create.volume', {
-    url: '/volume',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/createVolume/createvolume.html',
-        controller: 'CreateVolumeController'
       },
       'sidebar@': {
         templateUrl: 'app/components/sidebar/sidebar.html',
@@ -368,71 +277,6 @@ function configureRoutes($stateProvider) {
       }
     }
   })
-  .state('images', {
-    url: '/images/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/images/images.html',
-        controller: 'ImagesController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('image', {
-    url: '^/images/:id/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/image/image.html',
-        controller: 'ImageController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('networks', {
-    url: '/networks/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/networks/networks.html',
-        controller: 'NetworksController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('network', {
-    url: '^/networks/:id/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/network/network.html',
-        controller: 'NetworkController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('node', {
-    url: '^/nodes/:id/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/node/node.html',
-        controller: 'NodeController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
   .state('registries', {
     url: '/registries/',
     views: {
@@ -465,58 +309,6 @@ function configureRoutes($stateProvider) {
       'content@': {
         templateUrl: 'app/components/registryAccess/registryAccess.html',
         controller: 'RegistryAccessController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('secrets', {
-    url: '^/secrets/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/secrets/secrets.html',
-        controller: 'SecretsController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('secret', {
-    url: '^/secret/:id/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/secret/secret.html',
-        controller: 'SecretController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('services', {
-    url: '/services/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/services/services.html',
-        controller: 'ServicesController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('service', {
-    url: '^/service/:id/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/service/service.html',
-        controller: 'ServiceController'
       },
       'sidebar@': {
         templateUrl: 'app/components/sidebar/sidebar.html',
@@ -633,71 +425,6 @@ function configureRoutes($stateProvider) {
       'content@': {
         templateUrl: 'app/components/team/team.html',
         controller: 'TeamController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('swarm', {
-    url: '/swarm',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/swarm/swarm.html',
-        controller: 'SwarmController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('swarm.visualizer', {
-    url: '/visualizer',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/swarmVisualizer/swarmVisualizer.html',
-        controller: 'SwarmVisualizerController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('actions.create.stack', {
-    url: '/stack',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/createStack/createstack.html',
-        controller: 'CreateStackController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('stacks', {
-    url: '/stacks/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/stacks/stacks.html',
-        controller: 'StacksController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('stack', {
-    url: '^/stacks/:id/',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/stack/stack.html',
-        controller: 'StackController'
       },
       'sidebar@': {
         templateUrl: 'app/components/sidebar/sidebar.html',
