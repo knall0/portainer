@@ -18,7 +18,6 @@
             <button class="btn btn-primary btn-responsive" ng-click="restart()" ng-disabled="!container.State.Running"><i class="fa fa-refresh space-right" aria-hidden="true"></i>Restart</button>
             <button class="btn btn-primary btn-responsive" ng-click="pause()" ng-disabled="!container.State.Running || container.State.Paused"><i class="fa fa-pause space-right" aria-hidden="true"></i>Pause</button>
             <button class="btn btn-primary btn-responsive" ng-click="unpause()" ng-disabled="!container.State.Paused"><i class="fa fa-play space-right" aria-hidden="true"></i>Resume</button>
-            <button class="btn btn-danger btn-responsive" ng-click="confirmRemove()"><i class="fa fa-trash space-right" aria-hidden="true"></i>Remove</button>
           </div>
           <div class="btn-group" role="group" aria-label="...">
             <button class="btn btn-danger btn-responsive" ng-click="recreate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-refresh space-right" aria-hidden="true"></i>Recreate</button>

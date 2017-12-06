@@ -71,17 +71,6 @@ angular.module('containers', [])
           });
         }
         else if (action === Container.remove) {
-          ContainerService.remove(c, $scope.cleanAssociatedVolumes)
-          .then(function success() {
-            var index = items.indexOf(c);
-            items.splice(index, 1);
-            Notifications.success('Container successfully removed');
-            complete();
-          })
-          .catch(function error(err) {
-            Notifications.error('Failure', err, 'Unable to remove container');
-            complete();
-          });
         }
         else if (action === Container.pause) {
           action({id: c.Id}, function (d) {
@@ -164,28 +153,6 @@ angular.module('containers', [])
   };
 
   $scope.confirmRemoveAction = function () {
-    var isOneContainerRunning = false;
-    angular.forEach($scope.containers, function (c) {
-      if (c.Checked && c.State === 'running') {
-        isOneContainerRunning = true;
-        return;
-      }
-    });
-    var title = 'You are about to remove one or more container.';
-    if (isOneContainerRunning) {
-      title = 'You are about to remove one or more running containers.';
-    }
-    ModalService.confirmContainerDeletion(
-      title,
-      function (result) {
-        if(!result) { return; }
-        $scope.cleanAssociatedVolumes = false;
-        if (result[0]) {
-          $scope.cleanAssociatedVolumes = true;
-        }
-        $scope.removeAction();
-      }
-    );
   };
 
   function toggleItemSelection(item) {

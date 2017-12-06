@@ -112,32 +112,9 @@ function ($q, $scope, $state, $transition$, $filter, Container, ContainerCommit,
   };
 
   $scope.confirmRemove = function () {
-    var title = 'You are about to remove a container.';
-    if ($scope.container.State.Running) {
-      title = 'You are about to remove a running container.';
-    }
-    ModalService.confirmContainerDeletion(
-      title,
-      function (result) {
-        if(!result) { return; }
-        var cleanAssociatedVolumes = false;
-        if (result[0]) {
-          cleanAssociatedVolumes = true;
-        }
-        $scope.remove(cleanAssociatedVolumes);
-      }
-    );
   };
 
   $scope.remove = function(cleanAssociatedVolumes) {
-    ContainerService.remove($scope.container, cleanAssociatedVolumes)
-    .then(function success() {
-      Notifications.success('Container successfully removed');
-      $state.go('containers', {}, {reload: true});
-    })
-    .catch(function error(err) {
-      Notifications.error('Failure', err, 'Unable to remove container');
-    });
   };
 
   $scope.restart = function () {
