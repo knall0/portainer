@@ -575,40 +575,6 @@ function configureRoutes($stateProvider) {
       }
     }
   })
-  .state('templates', {
-    url: '/templates/',
-    params: {
-      key: 'containers',
-      hide_descriptions: false
-    },
-    views: {
-      'content@': {
-        templateUrl: 'app/components/templates/templates.html',
-        controller: 'TemplatesController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
-  .state('templates_linuxserver', {
-    url: '^/templates/linuxserver.io',
-    params: {
-      key: 'linuxserver.io',
-      hide_descriptions: true
-    },
-    views: {
-      'content@': {
-        templateUrl: 'app/components/templates/templates.html',
-        controller: 'TemplatesController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
   .state('volumes', {
     url: '/volumes/',
     views: {

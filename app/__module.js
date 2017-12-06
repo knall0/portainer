@@ -64,7 +64,7 @@ angular.module('portainer', [
   'task',
   'team',
   'teams',
-  'templates',
+  // 'templates',
   'user',
   'users',
   'userSettings',

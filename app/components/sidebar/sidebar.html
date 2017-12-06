@@ -17,13 +17,6 @@
     <li class="sidebar-title"><span>Endpoint actions</span></li>
     <li class="sidebar-list">
       <a ui-sref="dashboard" ui-sref-active="active">Dashboard <span class="menu-icon fa fa-tachometer fa-fw"></span></a>
-    </li>
-    <li class="sidebar-list">
-      <a ui-sref="templates" ui-sref-active="active">App Templates <span class="menu-icon fa fa-rocket fa-fw"></span></a>
-      <div class="sidebar-sublist" ng-if="toggle && displayExternalContributors && ($state.current.name === 'templates' || $state.current.name === 'templates_linuxserver')">
-        <a ui-sref="templates_linuxserver" ui-sref-active="active">LinuxServer.io</a>
-      </div>
-    </li>
     <li class="sidebar-list" ng-if="applicationState.endpoint.apiVersion >= 1.25 && applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE' && applicationState.endpoint.mode.role === 'MANAGER'">
       <a ui-sref="stacks" ui-sref-active="active">Stacks <span class="menu-icon fa fa-th-list fa-fw"></span></a>
     </li>
