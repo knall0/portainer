@@ -79,16 +79,6 @@ function ($q, $scope, $state, $transition$, $filter, Container, ContainerCommit,
   };
 
   $scope.commit = function () {
-    var image = $scope.config.Image;
-    var registry = $scope.config.Registry;
-    var imageConfig = ImageHelper.createImageConfigForCommit(image, registry.URL);
-    ContainerCommit.commit({id: $transition$.params().id, tag: imageConfig.tag, repo: imageConfig.repo}, function (d) {
-      update();
-      Notifications.success('Container commited', $transition$.params().id);
-    }, function (e) {
-      update();
-      Notifications.error('Failure', e, 'Unable to commit container');
-    });
   };
 
   $scope.pause = function () {
