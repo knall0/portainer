@@ -134,19 +134,6 @@ function ($q, $scope, $state, $transition$, $filter, Container, ContainerCommit,
   };
 
   $scope.containerLeaveNetwork = function containerLeaveNetwork(container, networkId) {
-    $scope.state.leaveNetworkInProgress = true;
-    Network.disconnect({id: networkId}, { Container: $transition$.params().id, Force: false }, function (d) {
-      if (container.message) {
-        Notifications.error('Error', d, 'Unable to disconnect container from network');
-      } else {
-        Notifications.success('Container left network', $transition$.params().id);
-        $state.go('container', {id: $transition$.params().id}, {reload: true});
-      }
-      $scope.state.leaveNetworkInProgress = false;
-    }, function (e) {
-      Notifications.error('Failure', e, 'Unable to disconnect container from network');
-      $scope.state.leaveNetworkInProgress = false;
-    });
   };
 
   $scope.duplicate = function() {
@@ -221,19 +208,6 @@ function ($q, $scope, $state, $transition$, $filter, Container, ContainerCommit,
   };
 
   $scope.containerJoinNetwork = function containerJoinNetwork(container, networkId) {
-    $scope.state.joinNetworkInProgress = true;
-    Network.connect({id: networkId}, { Container: $transition$.params().id }, function (d) {
-      if (container.message) {
-        Notifications.error('Error', d, 'Unable to connect container to network');
-      } else {
-        Notifications.success('Container joined network', $transition$.params().id);
-        $state.go('container', {id: $transition$.params().id}, {reload: true});
-      }
-      $scope.state.joinNetworkInProgress = false;
-    }, function (e) {
-      Notifications.error('Failure', e, 'Unable to connect container to network');
-      $scope.state.joinNetworkInProgress = false;
-    });
   };
 
   var provider = $scope.applicationState.endpoint.mode.provider;
