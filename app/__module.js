@@ -18,7 +18,6 @@ angular.module('portainer', [
   'auth',
   'dashboard',
   'container',
-  'containerConsole',
   'containerLogs',
   'containerStats',
   'containerInspect',

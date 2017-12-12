@@ -92,19 +92,6 @@ function configureRoutes($stateProvider) {
       }
     }
   })
-  .state('console', {
-    url: '^/containers/:id/console',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/containerConsole/containerConsole.html',
-        controller: 'ContainerConsoleController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
   .state('inspect', {
     url: '^/containers/:id/inspect',
     views: {
