@@ -116,7 +116,7 @@
               <td ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM'"><a ui-sref="container({id: container.Id})">{{ container|swarmcontainername|truncate: truncate_size}}</a></td>
               <td ng-if="applicationState.endpoint.mode.provider !== 'DOCKER_SWARM'"><a ui-sref="container({id: container.Id})">{{ container|containername|truncate: truncate_size}}</a></td>
               <td>{{ container.StackName ? container.StackName : '-' }}</td>
-              <td><a ui-sref="image({id: container.Image})">{{ container.Image | hideshasum }}</a></td>
+              <td>{{ container.Image | hideshasum }}</td>
               <td ng-if="state.displayIP">{{ container.IP ? container.IP : '-' }}</td>
               <td ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM'">{{ container.hostIP }}</td>
               <td>
