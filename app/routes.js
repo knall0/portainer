@@ -105,20 +105,6 @@ function configureRoutes($stateProvider) {
       }
     }
   })
-  .state('dashboard', {
-    parent: 'root',
-    url: '/dashboard',
-    views: {
-      'content@': {
-        templateUrl: 'app/components/dashboard/dashboard.html',
-        controller: 'DashboardController'
-      },
-      'sidebar@': {
-        templateUrl: 'app/components/sidebar/sidebar.html',
-        controller: 'SidebarController'
-      }
-    }
-  })
   .state('actions', {
     abstract: true,
     url: '/actions',

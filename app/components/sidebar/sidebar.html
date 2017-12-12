@@ -16,14 +16,12 @@
     </li>
     <li class="sidebar-title"><span>Endpoint actions</span></li>
     <li class="sidebar-list">
-      <a ui-sref="dashboard" ui-sref-active="active">Dashboard <span class="menu-icon fa fa-tachometer fa-fw"></span></a>
-    <li class="sidebar-list">
-      <a ui-sref="containers" ui-sref-active="active">Containers <span class="menu-icon fa fa-server fa-fw"></span></a>
+         <a ui-sref="containers" ui-sref-active="active">Containers <span class="menu-icon fa fa-server fa-fw"></span></a>
     </li>
     <li class="sidebar-list" ng-if="(applicationState.endpoint.mode.provider === 'DOCKER_STANDALONE' || applicationState.endpoint.mode.provider === 'VMWARE_VIC') && isAdmin">
       <a ui-sref="events" ui-sref-active="active">Events <span class="menu-icon fa fa-history fa-fw"></span></a>
     </li>
-    <li class="sidebar-list" ng-if="applicationState.endpoint.mode.provider === 'DOCKER_STANDALONE' || applicationState.endpoint.mode.provider === 'VMWARE_VIC'">
+    <li class="sidebar-list" ng-if="(applicationState.endpoint.mode.provider === 'DOCKER_STANDALONE' || applicationState.endpoint.mode.provider === 'VMWARE_VIC') && isAdmin">
       <a ui-sref="engine" ui-sref-active="active">Engine <span class="menu-icon fa fa-th fa-fw"></span></a>
     </li>
     <li class="sidebar-title" ng-if="!applicationState.application.authentication || isAdmin || isTeamLeader">

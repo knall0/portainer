@@ -20,7 +20,7 @@ function ($scope, $state, $transition$, $window, $timeout, $sanitize, Authentica
     }
     StateManager.updateEndpointState(true)
     .then(function success(data) {
-      $state.go('dashboard');
+      $state.go('containers');
     })
     .catch(function error(err) {
       Notifications.error('Failure', err, 'Unable to connect to the Docker endpoint');
@@ -95,7 +95,7 @@ function ($scope, $state, $transition$, $window, $timeout, $sanitize, Authentica
     }
 
     if (Authentication.isAuthenticated()) {
-      $state.go('dashboard');
+      $state.go('containers');
     }
 
     var authenticationEnabled = $scope.applicationState.application.authentication;

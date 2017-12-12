@@ -16,7 +16,6 @@ angular.module('portainer', [
   'portainer.helpers',
   'portainer.services',
   'auth',
-  'dashboard',
   'container',
   'containerLogs',
   'containerStats',

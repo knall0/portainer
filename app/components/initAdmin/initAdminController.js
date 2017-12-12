@@ -34,7 +34,7 @@ function ($scope, $state, $sanitize, Notifications, Authentication, StateManager
         EndpointProvider.setEndpointID(endpointID);
         StateManager.updateEndpointState(false)
         .then(function success() {
-          $state.go('dashboard');
+          $state.go('containers');
         })
         .catch(function error(err) {
           Notifications.error('Failure', err, 'Unable to connect to Docker environment');

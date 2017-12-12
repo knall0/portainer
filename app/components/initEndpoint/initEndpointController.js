@@ -3,7 +3,7 @@ angular.module('initEndpoint', [])
 function ($scope, $state, EndpointService, StateManager, EndpointProvider, Notifications) {
 
   if (!_.isEmpty($scope.applicationState.endpoint)) {
-    $state.go('dashboard');
+    $state.go('containers');
   }
 
   $scope.logo = StateManager.getState().application.logo;
@@ -38,7 +38,7 @@ function ($scope, $state, EndpointService, StateManager, EndpointProvider, Notif
       return StateManager.updateEndpointState(false);
     })
     .then(function success(data) {
-      $state.go('dashboard');
+      $state.go('containers');
     })
     .catch(function error(err) {
       Notifications.error('Failure', err, 'Unable to connect to the Docker environment');
@@ -69,7 +69,7 @@ function ($scope, $state, EndpointService, StateManager, EndpointProvider, Notif
       return StateManager.updateEndpointState(false);
     })
     .then(function success(data) {
-      $state.go('dashboard');
+      $state.go('containers');
     })
     .catch(function error(err) {
       Notifications.error('Failure', err, 'Unable to connect to the Docker environment');
