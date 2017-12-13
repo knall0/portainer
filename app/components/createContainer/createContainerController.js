@@ -470,7 +470,7 @@ function ($q, $scope, $state, $timeout, $transition$, $filter, Container, Contai
     .then(function success(d) {
       var fromContainer = new ContainerDetailsViewModel(d);
       if (!fromContainer.ResourceControl) {
-        $scope.formValues.AccessControlData.AccessControlEnabled = false;
+        $scope.formValues.AccessControlData.AccessControlEnabled = true;
       }
       $scope.fromContainer = fromContainer;
       $scope.config = ContainerHelper.configFromContainer(fromContainer.Model);
