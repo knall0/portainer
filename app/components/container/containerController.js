@@ -1,6 +1,6 @@
 angular.module('container', [])
-.controller('ContainerController', ['$q', '$scope', '$state','$transition$', '$filter', 'Container', 'ContainerCommit', 'ContainerHelper', 'ContainerService', 'ImageHelper', 'Network', 'NetworkService', 'Notifications', 'Pagination', 'ModalService', 'ResourceControlService', 'RegistryService', 'ImageService',
-function ($q, $scope, $state, $transition$, $filter, Container, ContainerCommit, ContainerHelper, ContainerService, ImageHelper, Network, NetworkService, Notifications, Pagination, ModalService, ResourceControlService, RegistryService, ImageService) {
+.controller('ContainerController', ['$q', '$scope', '$state', '$timeout', '$transition$', '$filter', 'Container', 'ContainerCommit', 'ContainerHelper', 'ContainerService', 'Image', 'ImageHelper', 'Volume', 'Network', 'NetworkService', 'Notifications', 'Pagination', 'ModalService', 'ResourceControlService', 'Authentication', 'RegistryService', 'ImageService', 'FormValidator', 'SystemService', 'SettingsService',
+function ($q, $scope, $state, $timeout, $transition$, $filter, Container, ContainerCommit, ContainerHelper, ContainerService, Image, ImageHelper, Volume, Network, NetworkService, Notifications, Pagination, ModalService, ResourceControlService, Authentication, RegistryService, ImageService, FormValidator, SystemService, SettingsService) {
   $scope.activityTime = 0;
   $scope.portBindings = [];
   $scope.config = {
@@ -227,4 +227,8 @@ function ($q, $scope, $state, $transition$, $filter, Container, ContainerCommit,
   });
 
   update();
+  
+  
+  
+  
 }]);
