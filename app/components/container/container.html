@@ -21,7 +21,7 @@
           </div>
           <div class="btn-group" role="group" aria-label="...">
             <button class="btn btn-danger btn-responsive" ng-click="recreate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-refresh space-right" aria-hidden="true"></i>Recreate</button>
-            <button class="btn btn-primary btn-responsive" ng-click="duplicate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-files-o space-right" aria-hidden="true"></i>Duplicate/Edit</button>
+            <button class="btn btn-primary btn-responsive" ng-click="duplicate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-files-o space-right" aria-hidden="true"></i>Change image version</button>
           </div>
         </rd-widget-body>
       </rd-widget>
@@ -43,7 +43,6 @@
                 <td>Name</td>
                 <td ng-if="!container.edit">
                   {{ container.Name|trimcontainername }}
-                  <a href="" data-toggle="tooltip" title="Edit container name" ng-click="container.edit = true;"><i class="fa fa-edit"></i></a>
                 </td>
                 <td ng-if="container.edit">
                   <form ng-submit="renameContainer()">
