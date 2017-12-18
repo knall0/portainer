@@ -14,7 +14,7 @@
                   public
                   <portainer-tooltip message="This resource can be managed by any user with access to this endpoint." position="bottom" style="margin-left: -3px;"></portainer-tooltip>
                 </span>
-                <span ng-if="$ctrl.resourceControl">
+                <span ng-if="$ctrl.resourceControl && isAdmin">
                   {{ $ctrl.resourceControl.Ownership }}
                   <portainer-tooltip ng-if="$ctrl.resourceControl.Ownership === 'administrators'" message="This resource can only be managed by administrators." position="bottom" style="margin-left: -3px;"></portainer-tooltip>
                   <portainer-tooltip ng-if="$ctrl.resourceControl.Ownership === 'private'" message="Management of this resource is restricted to a single user." position="bottom" style="margin-left: -3px;"></portainer-tooltip>
@@ -61,7 +61,7 @@
             </tr>
             <!-- !authorized-teams -->
             <!-- edit-ownership -->
-            <tr ng-if="!($ctrl.resourceControl.Type === 1 && $ctrl.resourceType === 'volume')
+            <tr ng-if="$ctrl.isAdmin && !($ctrl.resourceControl.Type === 1 && $ctrl.resourceType === 'volume')
             && !($ctrl.resourceControl.Type === 2 && $ctrl.resourceType === 'container')
             && !($ctrl.resourceControl.Type === 6 && $ctrl.resourceType !== 'stack')
             && !$ctrl.state.editOwnership
